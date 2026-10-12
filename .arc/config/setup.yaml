@@ -1,0 +1,38 @@
+components:
+  comp_guest_bff:
+    mode: local
+    test_command: cd apps/guest-bff && pnpm run test && pnpm run test:e2e
+    build_command: cd apps/guest-bff && pnpm run build
+    devloop_command: cd apps/guest-bff && pnpm run lint && pnpm run test
+  comp_guest_web_app:
+    mode: local
+    test_command: cd apps/guest-web && pnpm test
+    build_command: cd apps/guest-web && pnpm build
+  comp_hotel_api:
+    mode: local
+    test_command: cd apps/hotel-api && pnpm run test && pnpm run test:e2e
+    build_command: cd apps/hotel-api && pnpm run build
+    devloop_command: cd apps/hotel-api && pnpm run lint && pnpm run test
+  comp_staff_admin_web_app:
+    mode: local
+    test_command: cd apps/staff-admin-web && pnpm test && pnpm test:e2e
+    build_command: cd apps/staff-admin-web && pnpm build
+    devloop_command: cd apps/staff-admin-web && pnpm typecheck && pnpm lint && pnpm
+      test
+  comp_staff_bff:
+    mode: local
+    test_command: cd apps/staff-bff && pnpm run test && pnpm run test:e2e
+    build_command: cd apps/staff-bff && pnpm run build
+    devloop_command: cd apps/staff-bff && pnpm run lint && pnpm run test
+commands:
+  test: (cd apps/guest-bff && pnpm run test && pnpm run test:e2e) && (cd apps/guest-web
+    && pnpm test) && (cd apps/hotel-api && pnpm run test && pnpm run test:e2e) &&
+    (cd apps/staff-admin-web && pnpm test && pnpm test:e2e) && (cd apps/staff-bff
+    && pnpm run test && pnpm run test:e2e)
+  build: (cd apps/guest-bff && pnpm run build) && (cd apps/guest-web && pnpm build)
+    && (cd apps/hotel-api && pnpm run build) && (cd apps/staff-admin-web && pnpm build)
+    && (cd apps/staff-bff && pnpm run build)
+  devloop: (cd apps/guest-bff && pnpm run lint && pnpm run test) && (cd apps/hotel-api
+    && pnpm run lint && pnpm run test) && (cd apps/staff-admin-web && pnpm typecheck
+    && pnpm lint && pnpm test) && (cd apps/staff-bff && pnpm run lint && pnpm run
+    test)
