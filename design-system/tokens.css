@@ -1,0 +1,39 @@
+/**
+ * Do not edit directly, this file was auto-generated.
+ */
+
+:root {
+  --color-fg: #1a1f2b; /** Default body text color. Paired with color-bg it clears WCAG AA (4.5:1) for normal text. */
+  --color-bg: #ffffff; /** Default page/surface background. */
+  --color-primary: #1d4ed8; /** Brand accent for primary actions and links. */
+  --color-primary-fg: #ffffff; /** Text/icon color on top of color-primary surfaces. */
+  --color-border: #d8dfe7; /** Default hairline border for cards, inputs, and dividers. */
+  --color-muted-fg: #606b7c; /** Secondary text: captions, helper text, timestamps. */
+  --color-surface-raised: #f8fafd; /** Background for cards and panels that sit above color-bg. */
+  --color-danger: #b81c1c; /** Destructive actions and error states. */
+  --space-1: 4px; /** Tightest spacing: icon-to-label gaps, chip padding. */
+  --space-2: 8px; /** Compact spacing: form control padding, small gaps. */
+  --space-3: 16px; /** Default spacing: card padding, section gaps. */
+  --space-4: 24px; /** Generous spacing: page gutters, between major blocks. */
+  --radius-sm: 4px; /** Chips, badges, small controls. */
+  --radius-md: 8px; /** Buttons, inputs, default control radius. */
+  --radius-lg: 16px; /** Cards and modals. */
+  --font-size-sm: 12px; /** Captions, helper text, table metadata. */
+  --font-size-md: 14px; /** Default body text and form controls. */
+  --font-size-lg: 20px; /** Section headings and card titles. */
+  --font-family-base: system-ui, -apple-system, 'Segoe UI', sans-serif; /** Default UI typeface stack. */
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --border-width-default: 1px; /** Hairline border width used across inputs, cards, chips. */
+  --shadow-card: 0px 2px 8px 0px rgb(10.2% 12.2% 16.9% / 0.08); /** Resting elevation for raised cards and panels. */
+  --button-primary-background: var(--color-primary);
+  --button-primary-foreground: var(--color-primary-fg);
+  --button-primary-radius: var(--radius-md);
+  --button-secondary-background: var(--color-bg);
+  --button-secondary-foreground: var(--color-primary);
+  --button-secondary-border: var(--color-border);
+  --card-default-background: var(--color-surface-raised);
+  --card-default-border: var(--color-border);
+  --card-default-radius: var(--radius-lg);
+  --card-default-padding: var(--space-3);
+}

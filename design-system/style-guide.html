@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Hotel V2 — Style Guide</title>
+<link rel="stylesheet" href="tokens.css" />
+<link rel="stylesheet" href="prototype-utils.css" />
+<style>
+  body {
+    font-family: var(--font-family-base);
+    color: var(--color-fg);
+    background: var(--color-bg);
+    margin: 0;
+    padding: var(--space-4);
+  }
+  h1, h2 {
+    font-family: var(--font-family-base);
+  }
+  section {
+    margin-bottom: var(--space-4);
+  }
+  .swatch-grid, .scale-grid, .component-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+  }
+  .swatch {
+    width: 160px;
+  }
+  .swatch-color {
+    height: 64px;
+    border-radius: var(--radius-md);
+    border: var(--border-width-default) solid var(--color-border);
+  }
+  .swatch-label {
+    font-size: var(--font-size-sm);
+    color: var(--color-muted-fg);
+    margin-top: var(--space-1);
+  }
+  .scale-box {
+    background: var(--color-surface-raised);
+    border: var(--border-width-default) solid var(--color-border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .type-row {
+    display: flex;
+    align-items: baseline;
+    gap: var(--space-3);
+    margin-bottom: var(--space-2);
+  }
+  .type-row span.label {
+    width: 120px;
+    font-size: var(--font-size-sm);
+    color: var(--color-muted-fg);
+  }
+  .guidelines {
+    max-width: 760px;
+  }
+  .guidelines h3 {
+    margin-bottom: var(--space-1);
+  }
+  .guidelines ul {
+    margin-top: 0;
+  }
+</style>
+</head>
+<body>
+
+<h1>Hotel V2 — Style Guide</h1>
+
+<section>
+  <h2>Colors</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-fg);"></div>
+      <div class="swatch-label">color-fg</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-bg);"></div>
+      <div class="swatch-label">color-bg</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-primary);"></div>
+      <div class="swatch-label">color-primary</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-primary-fg);"></div>
+      <div class="swatch-label">color-primary-fg</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-border);"></div>
+      <div class="swatch-label">color-border</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-muted-fg);"></div>
+      <div class="swatch-label">color-muted-fg</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-surface-raised);"></div>
+      <div class="swatch-label">color-surface-raised</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: var(--color-danger);"></div>
+      <div class="swatch-label">color-danger</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Spacing</h2>
+  <div class="scale-grid">
+    <div class="scale-box" style="width: var(--space-1); height: var(--space-1);"></div>
+    <div class="scale-box" style="width: var(--space-2); height: var(--space-2);"></div>
+    <div class="scale-box" style="width: var(--space-3); height: var(--space-3);"></div>
+    <div class="scale-box" style="width: var(--space-4); height: var(--space-4);"></div>
+  </div>
+  <p class="swatch-label">space-1 (4px) · space-2 (8px) · space-3 (16px) · space-4 (24px)</p>
+</section>
+
+<section>
+  <h2>Radii</h2>
+  <div class="scale-grid">
+    <div class="scale-box" style="width: 64px; height: 64px; border-radius: var(--radius-sm);"></div>
+    <div class="scale-box" style="width: 64px; height: 64px; border-radius: var(--radius-md);"></div>
+    <div class="scale-box" style="width: 64px; height: 64px; border-radius: var(--radius-lg);"></div>
+  </div>
+  <p class="swatch-label">radius-sm · radius-md · radius-lg</p>
+</section>
+
+<section>
+  <h2>Type scale</h2>
+  <div class="type-row">
+    <span class="label">font-size-sm</span>
+    <span style="font-size: var(--font-size-sm);">The quick brown fox jumps over the lazy dog</span>
+  </div>
+  <div class="type-row">
+    <span class="label">font-size-md</span>
+    <span style="font-size: var(--font-size-md);">The quick brown fox jumps over the lazy dog</span>
+  </div>
+  <div class="type-row">
+    <span class="label">font-size-lg</span>
+    <span style="font-size: var(--font-size-lg); font-weight: var(--font-weight-semibold);">The quick brown fox jumps over the lazy dog</span>
+  </div>
+</section>
+
+<section>
+  <h2>Buttons</h2>
+  <div class="component-grid">
+    <button class="btn btn-primary">Book now</button>
+    <button class="btn btn-secondary">Cancel</button>
+    <button class="btn btn-danger">Delete rate</button>
+  </div>
+</section>
+
+<section>
+  <h2>Chips</h2>
+  <div class="component-grid">
+    <span class="chip">Confirmed</span>
+    <span class="chip">Checked-in</span>
+    <span class="chip">Vacant</span>
+  </div>
+</section>
+
+<section>
+  <h2>Card</h2>
+  <div class="card" style="max-width: 320px;">
+    <h3 class="card-title">Ocean View Suite</h3>
+    <p class="card-body">Queen bed, balcony, sleeps 2. $240/night.</p>
+    <span class="chip">Vacant</span>
+  </div>
+</section>
+
+<section>
+  <h2>Form controls</h2>
+  <div class="field" style="max-width: 320px;">
+    <label class="field-label" for="guest-name">Guest name</label>
+    <input class="field-input" id="guest-name" type="text" placeholder="Jane Doe" />
+    <span class="field-help">As it appears on ID.</span>
+  </div>
+</section>
+
+<section>
+  <h2>UI Guidelines</h2>
+  <div class="guidelines">
+    <p>This product ships two separate web apps (guest site and staff admin), each with its
+    own runtime, but they share this one visual language so the brand feels like a single
+    product.</p>
+
+    <h3>Navigation &amp; information architecture</h3>
+    <ul>
+      <li><strong>Guest web app</strong>: top bar only (logo, Rooms, My Bookings, Account) —
+      guests complete short, linear flows (browse → book → manage stay), not deep hierarchies,
+      so a persistent sidebar would waste space on content they rarely revisit.</li>
+      <li><strong>Staff admin web app</strong>: left sidebar (Rooms, Bookings, Rates, Guests)
+      with a slim top bar for account/search — staff work across many sections in one session,
+      so a persistent sidebar beats re-navigating a top bar for every task switch.</li>
+    </ul>
+
+    <h3>Layout &amp; density</h3>
+    <ul>
+      <li>Staff admin is data-dense: tables are the default for any list the staff will scan or
+      sort (bookings, rooms, rates), because staff need to compare many records at a glance.
+      Use <code>.card</code> only to group a handful of related fields (e.g. a single booking's
+      detail panel), not to wrap tabular data. Standard breakpoint: collapse the sidebar to
+      icons under 1024px, since admin is primarily used on laptop/desktop displays.</li>
+      <li>The guest app is spacious and card-based: rooms and bookings render as
+      <code>.card</code> grids, not tables, because guests are scanning a handful of options,
+      not auditing records. Standard breakpoint: single-column below 640px, since a meaningful
+      share of guest traffic is mobile.</li>
+    </ul>
+
+    <h3>Component usage</h3>
+    <ul>
+      <li><code>.btn-primary</code> for the one key action per screen (Book, Save, Confirm) —
+      a single clear primary action reduces decision friction in booking and admin-write flows
+      alike.</li>
+      <li><code>.btn-secondary</code> for alternate or cancel actions, <code>.btn-danger</code>
+      only for destructive actions (cancel booking, delete rate) so destructive intent is
+      visually distinct from default actions.</li>
+      <li><code>.chip</code> for status (Confirmed, Checked-in, Vacant) wherever it appears in a
+      table row or card, so status is scannable without reading full text.</li>
+      <li><code>.field</code> / <code>.field-input</code> for every form control in both apps,
+      so booking forms and admin forms feel like the same product.</li>
+    </ul>
+
+    <h3>Theme</h3>
+    <p>Light theme only, for both apps. Hotel staff work in well-lit front-desk and back-office
+    environments and guests browse in short sessions, so dark mode adds maintenance cost without
+    a clear need today.</p>
+
+    <h3>Voice &amp; tone</h3>
+    <ul>
+      <li>Guest-facing copy: warm and plain ("Your room is ready", not "Reservation status:
+      READY") — guests are customers, not operators, and should never read system/internal
+      language.</li>
+      <li>Staff admin copy: terse and operational ("Save rate", "3 rooms unassigned") — staff
+      value speed over friendliness during repetitive daily tasks.</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>
