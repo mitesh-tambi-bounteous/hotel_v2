@@ -4,26 +4,36 @@ components:
     test_command: cd apps/guest-bff && pnpm run test && pnpm run test:e2e
     build_command: cd apps/guest-bff && pnpm run build
     devloop_command: cd apps/guest-bff && pnpm run lint && pnpm run test
+    e2e_command: cd apps/guest-bff && npm run test:e2e
+    install_command: cd apps/guest-bff && npm install {name}@{version}
   comp_guest_web_app:
     mode: local
     test_command: cd apps/guest-web && pnpm test
     build_command: cd apps/guest-web && pnpm build
+    e2e_command: cd apps/guest-web && npm run test:e2e
+    install_command: cd apps/guest-web && npm install {name}@{version}
   comp_hotel_api:
     mode: local
     test_command: cd apps/hotel-api && pnpm run test && pnpm run test:e2e
     build_command: cd apps/hotel-api && pnpm run build
     devloop_command: cd apps/hotel-api && pnpm run lint && pnpm run test
+    e2e_command: cd apps/hotel-api && npm run test:e2e
+    install_command: cd apps/hotel-api && npm install {name}@{version}
   comp_staff_admin_web_app:
     mode: local
     test_command: cd apps/staff-admin-web && pnpm test && pnpm test:e2e
     build_command: cd apps/staff-admin-web && pnpm build
     devloop_command: cd apps/staff-admin-web && pnpm typecheck && pnpm lint && pnpm
       test
+    e2e_command: cd apps/staff-admin-web && npm run test:e2e
+    install_command: cd apps/staff-admin-web && npm install {name}@{version}
   comp_staff_bff:
     mode: local
     test_command: cd apps/staff-bff && pnpm run test && pnpm run test:e2e
     build_command: cd apps/staff-bff && pnpm run build
     devloop_command: cd apps/staff-bff && pnpm run lint && pnpm run test
+    e2e_command: cd apps/staff-bff && npm run test:e2e
+    install_command: cd apps/staff-bff && npm install {name}@{version}
 commands:
   test: (cd apps/guest-bff && pnpm run test && pnpm run test:e2e) && (cd apps/guest-web
     && pnpm test) && (cd apps/hotel-api && pnpm run test && pnpm run test:e2e) &&
@@ -36,3 +46,8 @@ commands:
     && pnpm run lint && pnpm run test) && (cd apps/staff-admin-web && pnpm typecheck
     && pnpm lint && pnpm test) && (cd apps/staff-bff && pnpm run lint && pnpm run
     test)
+setup_command: (cd apps/guest-web && npm ci) && (cd apps/staff-admin-web && npm ci)
+  && (cd apps/hotel-api && npm ci) && (cd apps/guest-bff && npm ci) && (cd apps/staff-bff
+  && npm ci)
+package_install_commands:
+  npm: npm install {name}@{version}
